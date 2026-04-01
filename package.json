@@ -1,0 +1,26 @@
+{
+  "name": "serverless",
+  "version": "1.0.0",
+  "description": "AWS Lambda function that sends email verification messages when new user accounts are created.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghatoleaakruti/serverless.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ghatoleaakruti/serverless/issues"
+  },
+  "homepage": "https://github.com/ghatoleaakruti/serverless#readme",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1021.0",
+    "@aws-sdk/lib-dynamodb": "^3.1021.0",
+    "axios": "^1.14.0"
+  }
+}
