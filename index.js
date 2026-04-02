@@ -26,14 +26,14 @@ exports.handler = async (event) => {
   }
 
   // Store token in DynamoDB with TTL = now + 2 minutes
-  const ttl = Math.floor(Date.now() / 1000) + 120;
+  const ttl = Math.floor(Date.now() / 1000) + 60;
   await ddb.send(new PutCommand({
     TableName: tableName,
     Item: { token, email, ttl },
   }));
 
   // Send verification email via Mailgun
-  const verifyUrl = `${baseUrl}/v1/verifyEmail?token=${token}`;
+  const verifyUrl = `${baseUrl}/validateEmail?email=${email}&token=${token}`;
   const formData = new URLSearchParams();
   formData.append("from", `Aakruti App <mailgun@${mailgunDomain}>`);
   formData.append("to", email);
