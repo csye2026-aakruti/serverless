@@ -46,6 +46,8 @@ exports.handler = async (event) => {
     formData.append("to", email);
     formData.append("subject", "Verify your email address");
     formData.append("text", `Hi ${firstName},\n\nPlease verify your email within 1 minute:\n${verifyUrl}\n\nIf you did not create an account, ignore this email.`);
+    formData.append("text", `Hi, we updated today!`);
+
 
     await axios.post(
       `https://api.mailgun.net/v3/${mailgunDomain}/messages`,
