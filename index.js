@@ -31,7 +31,7 @@ exports.handler = async (event) => {
     }
 
     // Store token in DynamoDB with TTL = now + 1 minute
-    const ttl = Math.floor(Date.now() / 1000) + 60;
+    const ttl = Math.floor(Date.now() / 1000) + 300;
     await ddb.send(new PutCommand({
       TableName: tableName,
       Item: { token, email, ttl },
